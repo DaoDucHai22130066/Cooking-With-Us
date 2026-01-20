@@ -1,0 +1,429 @@
+/* 1. CÀI ĐẶT CHUNG (VARIABLES) */
+:root {
+    --primary-color: #a0522d; /* Màu nâu đất chủ đạo */
+    --bg-color: #fffcf5;      /* Màu nền kem nhạt */
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --gray-light: #f1f1f1;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Lato', sans-serif;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, .logo span {
+    font-family: 'Playfair Display', serif; /* Font chữ có chân sang trọng */
+}
+
+/* 2. HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Thanh tìm kiếm bo tròn */
+.search-container {
+    position: relative;
+    width: 40%;
+}
+.search-container input {
+    width: 100%;
+    padding: 12px 20px 12px 45px; /* Chừa chỗ cho icon */
+    border-radius: 30px; /* Bo tròn như viên thuốc */
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+}
+.search-container input:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.1); /* Hiệu ứng focus */
+    border-color: var(--primary-color);
+}
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.icon-btn {
+    font-size: 20px;
+    color: #333;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.icon-btn:hover { color: var(--primary-color); }
+
+/* 3. HERO SECTION */
+.hero {
+    /* Ảnh đồ ăn làm nền banner */
+    background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Hộp thông báo màu nâu ở giữa */
+.hero-overlay-box {
+    background-color: rgba(160, 82, 45, 0.95); /* Màu nâu có chút trong suốt */
+    color: white;
+    padding: 40px 60px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-width: 600px;
+}
+
+.hero-overlay-box h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.cta-btn {
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.cta-btn:hover { transform: scale(1.05); }
+
+/* 4. MAIN LAYOUT */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr; /* Bên trái chiếm 2.5 phần, phải 1 phần */
+    gap: 50px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+/* Grid card món ăn */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+.card:hover {
+    transform: translateY(-5px); /* Bay lên nhẹ khi hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-body { padding: 15px; }
+.card-body h3 { font-size: 18px; margin-bottom: 8px; }
+
+.rating { color: #a0522d; font-size: 14px; margin-bottom: 10px; }
+.rating span { color: #888; margin-left: 5px; }
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+/* 5. SIDEBAR (New Arrivals) */
+.sidebar-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.new-list { list-style: none; }
+
+.new-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 15px;
+}
+.new-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.new-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.item-info h4 { margin-bottom: 5px; font-size: 16px; }
+.sub-text { font-size: 12px; color: #888; display: block; margin-bottom: 5px; }
+.stars { font-size: 12px; color: #a0522d; }
+
+/* Tags */
+.categories-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag {
+    background: #eedece;
+    color: var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* 6. FOOTER */
+/* =========================================
+   MODERN FOOTER STYLES (Giống mẫu ảnh)
+   ========================================= */
+
+.modern-footer {
+    background-color: #1a1a1a; /* Màu nền đen nhám */
+    color: #b0b0b0; /* Màu chữ xám nhạt */
+    padding-top: 60px;
+    font-size: 14px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr; /* Cột 1 rộng hơn chút */
+    gap: 40px;
+}
+
+/* CỘT 1: Logo & Slogan */
+.footer-logo {
+    font-family: 'Playfair Display', cursive; /* Font kiểu viết tay */
+    font-size: 32px;
+    color: #a0522d; /* Màu vàng */
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.footer-slogan {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-desc p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+.footer-desc strong { color: #fff; }
+
+/* TIÊU ĐỀ CÁC CỘT */
+.footer-col h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* CỘT 2: Liên hệ */
+.contact-list { list-style: none; }
+.contact-list li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+.contact-list i {
+    color: #a0522d; /* Icon màu vàng */
+    margin-top: 3px;
+}
+
+/* Nút DMCA giả lập */
+.dmca-badge {
+    display: inline-block;
+    border: 1px solid #555;
+    padding: 2px 5px;
+    font-size: 10px;
+    margin-top: 15px;
+    color: white;
+    font-weight: bold;
+}
+.dmca-badge span {
+    background: #8bc34a;
+    color: white;
+    padding: 0 3px;
+    margin-right: 3px;
+}
+
+/* CỘT 3: Social & Links */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.social-icons a {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.social-icons a:hover {
+    background: #a0522d;
+    color: #1a1a1a;
+    border-color: #a0522d;
+}
+
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-links a:hover { color: #a0522d; }
+
+/* NÚT BACK TO TOP (Màu vàng tròn góc phải) */
+.scroll-top-btn {
+    position: absolute;
+    right: 30px;
+    bottom: 80px; /* Treo lơ lửng một chút */
+    background-color: #a0522d;
+    color: #1a1a1a;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(241, 196, 15, 0.3);
+    transition: transform 0.3s;
+}
+.scroll-top-btn:hover { transform: translateY(-5px); }
+
+/* Footer Bottom line */
+.footer-bottom {
+    border-top: 1px solid #333;
+    text-align: center;
+    padding: 20px;
+    background: #111;
+}
+
+/* =========================================
+   RESPONSIVE (DÀNH CHO ĐIỆN THOẠI & TABLET)
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+    /* 1. Header: Chuyển từ ngang sang dọc */
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    /* Thanh tìm kiếm dãn full màn hình */
+    .search-container {
+        width: 100%;
+    }
+
+    /* 2. Hero Section: Giảm kích thước chữ và padding */
+    .hero {
+        height: 300px; /* Thấp hơn một chút */
+    }
+
+    .hero-overlay-box {
+        width: 90%; /* Chiếm 90% màn hình thay vì cố định */
+        padding: 20px;
+    }
+
+    .hero-overlay-box h1 {
+        font-size: 24px; /* Chữ nhỏ lại cho vừa màn hình */
+    }
+
+    /* 3. Main Layout: Chuyển từ 2 cột sang 1 cột */
+    .container {
+        grid-template-columns: 1fr; /* Chỉ còn 1 cột duy nhất */
+        gap: 40px;
+        padding: 0 15px; /* Giảm lề 2 bên */
+        margin-top: 20px;
+    }
+
+    /* Cột bên phải (Sidebar) sẽ tự rớt xuống dưới */
+    .sidebar {
+        order: 2; /* Đảm bảo nó nằm dưới cùng */
+    }
+
+    /* 4. Recipe Grid: Vẫn giữ lưới nhưng tự co giãn */
+    /* Code cũ dùng minmax(260px, 1fr) đã tự động tốt rồi,
+       nhưng ta chỉnh lại gap cho gọn */
+    .recipe-grid {
+        gap: 15px;
+    }
+
+    /* 5. Footer */
+        .footer-container {
+            grid-template-columns: 1fr; /* 1 cột trên mobile */
+            gap: 30px;
+        }
+        .scroll-top-btn {
+            bottom: 20px;
+            right: 20px;
+        }
+}
