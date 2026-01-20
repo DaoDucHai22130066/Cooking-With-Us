@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang cá nhân - Chef Minh</title>
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/profile.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header id="header-placeholder" class="header"></header>
+
+<div class="profile-cover" style="background-image: url('https://images.unsplash.com/photo-1495195134817-aeb325a55b65?q=80&w=2076&auto=format&fit=crop');">
+  <div class="cover-overlay"></div>
+</div>
+
+<main class="container profile-container">
+
+  <aside class="profile-sidebar">
+    <div class="profile-card">
+      <div class="avatar-container">
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=2000" alt="User Avatar">
+        <button class="edit-avatar-btn"><i class="fa-solid fa-camera"></i></button>
+      </div>
+
+      <h2 class="user-name">Chef Minh</h2>
+      <p class="user-role">Thành viên tích cực</p>
+      <p class="user-bio">"Nấu ăn là cách tôi thể hiện tình yêu với gia đình. Mê món Việt & làm bánh Âu."</p>
+
+      <div class="profile-stats">
+        <div class="stat">
+          <strong>18</strong>
+          <span>Công thức</span>
+        </div>
+        <div class="stat">
+          <strong>1.5k</strong>
+          <span>Người theo dõi</span>
+        </div>
+      </div>
+
+      <div class="sidebar-menu">
+        <a href="#" class="menu-item active" data-tab="my-recipes">
+          <i class="fa-solid fa-utensils"></i> Công thức của tôi
+        </a>
+        <a href="#" class="menu-item" data-tab="saved-recipes">
+          <i class="fa-solid fa-bookmark"></i> Bộ sưu tập đã lưu
+        </a>
+        <a href="#" class="menu-item" data-tab="settings">
+          <i class="fa-solid fa-gear"></i> Cài đặt tài khoản
+        </a>
+        <a href="../AuthPage/login.html" class="menu-item logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <section class="profile-content">
+
+    <div id="my-recipes" class="content-tab active">
+      <div class="tab-header">
+        <div class="header-text">
+          <h3>Danh sách công thức</h3>
+          <p>Quản lý các món ăn bạn đã chia sẻ với cộng đồng.</p>
+        </div>
+        <button class="add-new-btn"><i class="fa-solid fa-plus"></i> Tạo món mới</button>
+      </div>
+
+      <div class="recipe-grid-profile">
+
+        <article class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070');">
+            <span class="status-badge published">Đã duyệt</span>
+          </div>
+          <div class="card-body">
+            <h3>Phở Bò Truyền Thống</h3>
+            <div class="rating"><i class="fa-solid fa-star"></i> 5.0 (24 đánh giá)</div>
+            <div class="meta-action">
+              <span class="date">20/01/2024</span>
+              <a href="#" class="edit-link"><i class="fa-solid fa-pen"></i> Sửa</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80');">
+            <span class="status-badge pending">Đang chờ duyệt</span>
+          </div>
+          <div class="card-body">
+            <h3>Cà Ri Gà Cay</h3>
+            <div class="rating"><i class="fa-regular fa-star"></i> Chưa có đánh giá</div>
+            <div class="meta-action">
+              <span class="date">Vừa xong</span>
+              <a href="#" class="edit-link"><i class="fa-solid fa-pen"></i> Sửa</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80');">
+            <span class="status-badge draft">Bản nháp</span>
+          </div>
+          <div class="card-body">
+            <h3>Bánh Mì Nướng Bơ Tỏi</h3>
+            <div class="meta-action">
+              <span class="date">Đã lưu 2h trước</span>
+              <a href="#" class="edit-link">Tiếp tục viết</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80');">
+            <span class="status-badge published">Đã duyệt</span>
+          </div>
+          <div class="card-body">
+            <h3>Salad Healthy</h3>
+            <div class="rating"><i class="fa-solid fa-star"></i> 4.8 (10 đánh giá)</div>
+            <div class="meta-action">
+              <span class="date">15/01/2024</span>
+              <a href="#" class="edit-link"><i class="fa-solid fa-pen"></i> Sửa</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80');">
+            <span class="status-badge published">Đã duyệt</span>
+          </div>
+          <div class="card-body">
+            <h3>Pancake Dâu Tây</h3>
+            <div class="rating"><i class="fa-solid fa-star"></i> 4.9 (5 đánh giá)</div>
+            <div class="meta-action">
+              <span class="date">10/01/2024</span>
+              <a href="#" class="edit-link"><i class="fa-solid fa-pen"></i> Sửa</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div id="saved-recipes" class="content-tab">
+      <h3>Bộ sưu tập yêu thích</h3>
+      <p>Chưa có món nào được lưu.</p>
+    </div>
+    <div id="settings" class="content-tab">
+      <h3>Cài đặt</h3>
+      <p>Form cài đặt...</p>
+    </div>
+
+  </section>
+</main>
+
+<footer id="footer-placeholder" class="modern-footer"></footer>
+<script src="../js/main.js"></script>
+<script src="../js/profile.js"></script>
+</body>
+</html>
